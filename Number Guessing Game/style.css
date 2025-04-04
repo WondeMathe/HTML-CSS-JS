@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+body{
+    margin: 0;
+    background-color: rgb(237, 240, 242);
+    font-family: 'Press Start 2P', cursive;
+}
+.container{
+    margin: 6%;
+}
+#main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+}
+#main button, #setupHumanvsHuman button{
+    border: none;
+    font-family: 'Press Start 2P', cursive;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#setup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+}
+#setup label{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+#setup input{
+    width: 150px;
+    height: 25px;
+    font-size: 18px;
+    font-family: Roboto;
+}
+
+#setupHumanvsHuman{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 70vw;
+    text-align: center;
+    line-height: 30px;
+}
+
+#setupHumanvsHuman input{
+    width: 150px;
+    height: 25px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.game {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.gamewithcompContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#backbtn, #previousbtn{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: rgb(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#homebtn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: 'Press Start 2P', cursive;
+    background-color: rgb(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.player{
+    width: 500px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(77, 136, 244);
+    font-family: cursive;
+}
+.player input{
+    font-family: 'Press Start 2P', cursive;
+    width: 200px;
+    height: 30px;
+    font-size: 14px;
+}
+.player #checkbtn{
+    font-family: 'Press Start 2P', cursive;
+    border: none;
+    height: 30px;
+    margin-left: 10px;
+    font-size: 16px;
+    border-radius: 3px;
+    background-color: rgb(0, 0, 0, 0.7);
+    color: #fff;
+    cursor: pointer;
+}
+.player h2{
+    text-align: center;
+    font-size: 22px;
+    color: burlywood;
+    font-family: 'press Start 2P', cursive;
+}
+.outputContainer{
+    margin: 10px;
+    border-radius: 5px;
+}
+.outputTitle{
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    color: #f5ebeb;
+    font-weight: bold;
+}
+#player1Feedback, #player2Feedback, #feedback{
+    min-height: 50px;
+    max-height: 50vh;
+    overflow-y: auto;
+    scrollbar-color: transparent transparent;
+    color: white;
+    background-color: rgb(0, 0, 0, 0.8);
+    border-radius: 5px;
+}
+.consoleMessage{
+    display: flex;
+    justify-content: space-around;
+}
+.displayResult{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    background-color: rgb(144, 147, 145);
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    /* width: 300px; */
+    border: 2px solid rgb(117, 118, 118);
+}
+#gameWinner{
+    font-size: 30px;
+    color: rgb(0, 0, 0, 0.8);
+    font-weight: bold;
+}
+#closeButton{
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+}
+#closeButton:hover{
+    color: red;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+#playAgain{
+    background-color: seagreen;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+#playAgain:hover{
+    background-color: green;
+}
+#exitGame{
+    background-color: rgb(221, 61, 61);
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+#exitGame:hover{
+    background-color: red;
+}
+
+@media (max-width: 768px) {
+    #main {
+        text-align: center;
+        display: block;
+    }
+    .choosePlayer{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .game {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 70px;
+    }
+    .game .player {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .gamewithcomp {
+        width: 90%;
+        margin-top: 50px;
+    }
+
+    .gamewithcompContainer h2 {
+        font-size: 20px;
+    }
+    .gamewithcompContainer .player {
+        width: 100%;
+    }
+}
