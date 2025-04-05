@@ -246,7 +246,6 @@ body{
         width: 100%;
     }
     .displayResult{
-        display: block;
         position: absolute;
         left: 15%;
     }
