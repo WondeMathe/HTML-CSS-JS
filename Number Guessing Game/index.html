@@ -19,6 +19,7 @@
         </div>
 
         <div id="setupHumanvsHuman" style="display: none;">
+            <button id="backtohome">Home</button>
             <p>Two players will enter a 4-digit number (1-9) without repetition. The goal is to guess the opponent's
                 number.</p>
             <h3>Enter your secret number</h3>
@@ -214,6 +215,7 @@
                 document.getElementById('gameWinner').innerText = `🏆 You win!`;
                 if (!bestScore || currentScore < bestScore) {
                     bestScore = currentScore;
+                    localStorage.setItem('bestScore', bestScore);
                     document.getElementById('bestScore').innerText = bestScore;
                 }
             }
@@ -240,6 +242,13 @@
         document.getElementById('exitGame').onclick = function () {
             window.close();
         };
+        // Back button for home page
+        document.getElementById('backtohome').onclick = function () {
+            mainMessage.style.display = 'flex';
+            setupHumanvsHuman.style.display = 'none';
+            document.getElementById('player1Secret').value = '';
+            document.getElementById('player2Secret').value = '';
+        };
         // Back button for game with two players
         document.getElementById('previousbtn').onclick = function () {
             document.querySelector('.game.container').style.display = 'none';
@@ -251,6 +260,10 @@
             document.getElementById("player1Feedback").innerHTML = '';
             document.getElementById("player2Feedback").innerHTML = '';
         };
+        // Home button to reset the game
+        document.getElementById('homebtn').onclick = function () {
+            location.reload();
+        };
         // Back button for game with computer
         document.getElementById('backbtn').onclick = function () {
             document.querySelector('.gamewithcomp.container').style.display = 'none';
@@ -259,6 +272,15 @@
             currentScore = 0;
             document.getElementById('currentScore').innerText = currentScore;
             document.getElementById("feedback").innerHTML = '';
+        };
+
+        // Load best score from local storage if available
+        window.onload = function () {
+            let storedBestScore = localStorage.getItem('bestScore');
+            if (storedBestScore) {
+                bestScore = parseInt(storedBestScore);
+                document.getElementById('bestScore').innerText = bestScore;
+            }
         };
         
     </script>
